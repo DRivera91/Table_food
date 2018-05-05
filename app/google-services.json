@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1030628430880",
+    "firebase_url": "https://tfood-4cc20.firebaseio.com",
+    "project_id": "tfood-4cc20",
+    "storage_bucket": "tfood-4cc20.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1030628430880:android:5bcea70d8d4cd2ef",
+        "android_client_info": {
+          "package_name": "com.example.daniel.table_food"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1030628430880-lis0485vcvhqc1ibtn2vibgo0fu86ink.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.daniel.table_food",
+            "certificate_hash": "905c2b90aefe038a04df7a5367c1c46a91164b97"
+          }
+        },
+        {
+          "client_id": "1030628430880-mfnisk7v6ng4uule0a1jutrpr665fvfv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBkvKvcwOOycV64_owP031h4T7hK_ZYJLc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1030628430880-mfnisk7v6ng4uule0a1jutrpr665fvfv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
