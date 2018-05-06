@@ -29,7 +29,7 @@ public class SignUp extends AppCompatActivity {
         edtEmail=(MaterialEditText)findViewById(R.id.edtEmail);
         edtPassword=(MaterialEditText)findViewById(R.id.edtPassword);
 
-        btnSignUp = (Button)findViewById(R.id.btnsignUp);
+        btnSignUp = (Button)findViewById(R.id.btnRegister);
 
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
         final DatabaseReference table_user = database.getReference("User");

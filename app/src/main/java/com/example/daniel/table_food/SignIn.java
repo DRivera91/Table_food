@@ -33,7 +33,7 @@ public class SignIn extends AppCompatActivity {
 
         edtPhone=(MaterialEditText)findViewById(R.id.edtPhone);
         edtPassword=(MaterialEditText)findViewById(R.id.edtPassword);
-        btnSignIn = (Button)findViewById(R.id.btnSignIn);
+        btnSignIn = (Button)findViewById(R.id.btnLogIn);
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         final DatabaseReference table_user = database.getReference("User");
