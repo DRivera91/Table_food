@@ -1,5 +1,6 @@
 package com.example.daniel.table_food;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -134,7 +135,9 @@ public class Home extends AppCompatActivity
         } else if (id == R.id.nav_orders) {
 
         } else if (id == R.id.nav_log_out) {
-
+            Intent logout = new Intent(Home.this, SignIn.class);
+            logout.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(logout);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
