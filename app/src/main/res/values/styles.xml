@@ -33,4 +33,15 @@
     <style name="Titles.title">
         <item name="android:textSize">@dimen/backdrop_title</item>
     </style>
+    <style name="CollapseAppBar" parent="@style/TextAppearance.AppCompat.Medium">
+        <item name="android:textSize">24sp</item>
+        <item name="textColor">@color/white</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+    <style name="ExpandedAppBar" parent="@style/TextAppearance.AppCompat.Title">
+        <item name="textColor">@color/colorPrimary</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+
 </resources>
