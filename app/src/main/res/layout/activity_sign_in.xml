@@ -35,7 +35,6 @@
             android:layout_width="match_parent"
             app:met_singleLineEllipsis="true"
             app:met_primaryColor="@color/white"
-            app:met_maxCharacters="10"
             app:met_floatingLabel="highlight"
             app:met_baseColor="@color/white"
             android:inputType="textPassword"

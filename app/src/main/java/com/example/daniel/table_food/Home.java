@@ -54,7 +54,7 @@ public class Home extends AppCompatActivity
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+                Home.this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
@@ -63,8 +63,8 @@ public class Home extends AppCompatActivity
 
 
         //mostramos el nombre del usuario
-        View headView = navigationView.getHeaderView(0);
-        txtFullName=(TextView)headView.findViewById(R.id.txtFullName);
+        View headerView = navigationView.getHeaderView(0);
+        txtFullName=(TextView)headerView.findViewById(R.id.txtFullName);
         txtFullName.setText(Common.currentUser.getEmail());
         //cargamos el menu
         recyler_menu =(RecyclerView)findViewById(R.id.recycler_menu);
