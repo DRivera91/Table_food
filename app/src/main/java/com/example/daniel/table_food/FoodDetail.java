@@ -36,14 +36,14 @@ public class FoodDetail extends AppCompatActivity {
         setContentView(R.layout.activity_food_detail);
 
         database = FirebaseDatabase.getInstance();
-        foods = database.getReference("Foods");
+        foods = database.getReference("Food");
 
         numberButton=(ElegantNumberButton)findViewById(R.id.number_button);
         btnCart = (FloatingActionButton)findViewById(R.id.btnCart);
         Descfood=(TextView)findViewById(R.id.food_description);
         Namefood=(TextView)findViewById(R.id.name_food);
         Pricefood=(TextView)findViewById(R.id.food_price);
-        Imgfood=(ImageView)findViewById(R.id.food_image);
+        Imgfood=(ImageView)findViewById(R.id.img_sfood);
 
         collapsingToolbarLayout = (CollapsingToolbarLayout)findViewById(R.id.collapsing);
         collapsingToolbarLayout.setExpandedTitleTextAppearance(R.style.ExpandedAppBar);
