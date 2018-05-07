@@ -37,6 +37,7 @@ public class Home extends AppCompatActivity
 
     RecyclerView recyler_menu;
     RecyclerView.LayoutManager layoutManager;
+    FirebaseRecyclerAdapter<Category, MenuViewHolder> adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,7 +81,7 @@ public class Home extends AppCompatActivity
 
     private void loadMenu() {
 
-        FirebaseRecyclerAdapter<Category, MenuViewHolder> adapter= new FirebaseRecyclerAdapter<Category, MenuViewHolder>(Category.class,R.layout.menu_item,MenuViewHolder.class,category) {
+        adapter= new FirebaseRecyclerAdapter<Category, MenuViewHolder>(Category.class,R.layout.menu_item,MenuViewHolder.class,category) {
             @Override
             protected void populateViewHolder(MenuViewHolder viewHolder, Category model, int position) {
                 viewHolder.txtMenuName.setText(model.getName());
@@ -90,7 +91,10 @@ public class Home extends AppCompatActivity
                 viewHolder.setItemClickListener(new ItemClickListener() {
                     @Override
                     public void onClick(View view, int position, boolean isLongClick) {
-                        Toast.makeText(Home.this,""+clickItem.getName(),Toast.LENGTH_SHORT).show();
+                        //capturamos el ID del restaurante
+                        Intent foodIntent = new Intent(Home.this,FoodList.class);
+                        foodIntent.putExtra("CategoryId", adapter.getRef(position).getKey());
+                        startActivity(foodIntent);
                     }
                 });
             }
