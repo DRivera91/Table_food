@@ -48,6 +48,7 @@ public class SignUp extends AppCompatActivity {
                         //verificamos que el usuario exista en la BD
                         if(dataSnapshot.child(edtPhone.getText().toString()).exists()) {
                             mDialog.dismiss();
+
                             Toast.makeText(SignUp.this, R.string.Exist, Toast.LENGTH_SHORT).show();
 
                         }else{
@@ -58,17 +59,10 @@ public class SignUp extends AppCompatActivity {
                             table_user.child(edtPhone.getText().toString()).setValue(user);
                             Toast.makeText(SignUp.this, R.string.Supsucessfully, Toast.LENGTH_SHORT).show();
                             finish();
-
-
-
                         }
-
-
                     }
-
                     @Override
                     public void onCancelled(DatabaseError databaseError) {
-
                     }
                 });
 

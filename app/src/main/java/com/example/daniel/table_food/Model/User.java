@@ -1,15 +1,23 @@
 package com.example.daniel.table_food.Model;
 
 public class User {
+    private String Email;
     private String Password;
-    private String email;
+    private String Phone;
 
     public User() {
     }
 
-    public User(String password, String email) {
+
+    public User(String email, String password) {
         Password = password;
-        this.email = email;
+        Email = email;
+    }
+
+    public User(String email, String password, String phone) {
+        Email = email;
+        Password = password;
+        Phone = phone;
     }
 
     public String getPassword() {
@@ -21,10 +29,18 @@ public class User {
     }
 
     public String getEmail() {
-        return email;
+        return Email;
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        Email = email;
+    }
+
+    public String getPhone() {
+        return Phone;
+    }
+
+    public void setPhone(String phone) {
+        Phone = phone;
     }
 }

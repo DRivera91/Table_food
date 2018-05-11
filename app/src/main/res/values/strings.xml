@@ -6,7 +6,7 @@
     <string name="sucessfully">inicio sesión con éxito</string>
     <string name="Supsucessfully">Usuario registrado con éxito</string>
     <string name="failed">Número de teléfono o contraseña incorrectos</string>
-    <string name="Exist">El usuario ya esta registrado</string>
+    <string name="Exist">El usuario ya existe en el sistema</string>
     <string name="waiting">Por favor espera</string>
     <string name="nExist">El usuario no existe en la base de datos</string>
     <string name="phone">Número de Teléfono</string>
