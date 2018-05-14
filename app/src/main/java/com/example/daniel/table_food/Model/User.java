@@ -14,11 +14,12 @@ public class User {
         Email = email;
     }
 
+    /*
     public User(String email, String password, String phone) {
         Email = email;
         Password = password;
         Phone = phone;
-    }
+    }*/
 
     public String getPassword() {
         return Password;
