@@ -51,12 +51,15 @@ public class Home extends AppCompatActivity
         database= FirebaseDatabase.getInstance();
         category= database.getReference("Category");
 
-        FloatingActionButton fab =(FloatingActionButton)findViewById(R.id.fab);
-        /*fab.setOnClickListener(new View.OnClickListener() {
-            Intent cartIntent = new Intent(Home.this, Cart.class);
 
-        });*/
-
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent cartIntent = new Intent(Home.this, Cart.class);
+                startActivity(cartIntent);
+            }
+        });
 
 
 
