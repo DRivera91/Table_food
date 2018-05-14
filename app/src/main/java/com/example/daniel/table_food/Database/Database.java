@@ -40,4 +40,23 @@ public class Database extends SQLiteAssetHelper{
         }
         return result;
     }
+
+    public void addToCart(Order order){
+        SQLiteDatabase db = getReadableDatabase();
+        String query = String.format("INSERT INTO OrderDetail(ProductId, ProductName, Quantity, Price, Discount) VALUES('%s','%s','%s','%s','%s');",
+            order.getProductId(),
+            order.getProductName(),
+            order.getQuantity(),
+                order.getPrice(),
+                order.getDiscount());
+            db.execSQL(query);
+    }
+
+    public void cleanCart(Order order){
+        SQLiteDatabase db = getReadableDatabase();
+        String query = String.format("DELETE FROM OrderDetail");
+        db.execSQL(query);
+    }
+
+
 }
