@@ -3,7 +3,6 @@ package com.example.daniel.table_food;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -16,7 +15,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.daniel.table_food.Common.Common;
 import com.example.daniel.table_food.Interface.ItemClickListener;
@@ -51,7 +49,7 @@ public class Home extends AppCompatActivity
         database= FirebaseDatabase.getInstance();
         category= database.getReference("Category");
 
-
+/*
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,7 +57,7 @@ public class Home extends AppCompatActivity
                 Intent cartIntent = new Intent(Home.this, Cart.class);
                 startActivity(cartIntent);
             }
-        });
+        });*/
 
 
 
@@ -146,7 +144,8 @@ public class Home extends AppCompatActivity
         if (id == R.id.nav_menu) {
             // Handle the camera action
         } else if (id == R.id.nav_cart) {
-
+            Intent cartIntent = new Intent(Home.this, Cart.class);
+            startActivity(cartIntent);
         } else if (id == R.id.nav_orders) {
 
         } else if (id == R.id.nav_log_out) {

@@ -13,18 +13,19 @@ import java.util.List;
 
 
 public class Database extends SQLiteAssetHelper{
-    private static String DB_NAME="tablefoodDB.bd";
-    private static int DB_VER=1;
+    private static final String DB_NAME="tablefoodDB.db";
+    private static final int DB_VER=1;
 
     public Database(Context context) {
         super(context, DB_NAME, null, DB_VER);
     }
+
     public List<Order> getCarts(){
         SQLiteDatabase db = getReadableDatabase();
         SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
 
         String[] sqlSelect ={"ProductName","ProductId", "Quantity", "Price", "Discount"};
-        String sqlTable ="orderDetail";
+        String sqlTable ="OrderDetail";
         qb.setTables(sqlTable);
         Cursor c = qb.query(db,sqlSelect,null,null,null,null,null);
         final List<Order> result = new ArrayList<>();
@@ -43,13 +44,13 @@ public class Database extends SQLiteAssetHelper{
 
     public void addToCart(Order order){
         SQLiteDatabase db = getReadableDatabase();
-        String query = String.format("INSERT INTO OrderDetail(ProductId, ProductName, Quantity, Price, Discount) VALUES('%s','%s','%s','%s','%s');",
+        String query = String.format("INSERT INTO OrderDetail(ProductId,ProductName,Quantity,Price,Discount) VALUES('%s','%s','%s','%s','%s');",
             order.getProductId(),
             order.getProductName(),
             order.getQuantity(),
-                order.getPrice(),
-                order.getDiscount());
-            db.execSQL(query);
+            order.getPrice(),
+            order.getDiscount());
+        db.execSQL(query);
     }
 
     public void cleanCart(){
