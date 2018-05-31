@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -63,8 +64,10 @@ public class Cart extends AppCompatActivity {
         btnPlace.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showAlertDialog();
-
+                if(cart.size()>0)
+                    showAlertDialog();
+                else
+                    Toast.makeText(Cart.this,R.string.empty,Toast.LENGTH_SHORT).show();
             }
 
 
@@ -117,6 +120,7 @@ public class Cart extends AppCompatActivity {
     private void loadListFood() {
         cart = new Database(this).getCarts();
         adapter = new CartAdapter(cart, this);
+        adapter.notifyDataSetChanged();
         recyclerView.setAdapter(adapter);
 
         //calculo del precio total
@@ -127,5 +131,20 @@ public class Cart extends AppCompatActivity {
         NumberFormat fmt = NumberFormat.getCurrencyInstance(locale);
 
         txtTotalPrice.setText(fmt.format(total));
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        if(item.getTitle().equals(Common.DELETE))
+            deleteCart(item.getOrder());
+        return true;
+    }
+
+    private void deleteCart(int posicion) {
+        cart.remove(posicion);
+        new Database(this).cleanCart();
+        for(Order item:cart)
+            new Database(this).addToCart(item);
+        loadListFood();
     }
 }
