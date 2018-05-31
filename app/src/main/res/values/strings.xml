@@ -20,6 +20,7 @@
     <string name="visa">Visa</string>
     <string name="mastercard">Mastercard</string>
     <string name="american">American Express</string>
+    <string name="thanks">Gracias por ordenar</string>
     <string name="cardn">Número de tarjeta</string>
     <string name="termns">He leído y estoy de acuerdo con los Términos y Condiciones y con las Políticas y Tratamientos de Datos Personales</string>
     <string name="error_invalid_email">Este correo es invalido</string>
