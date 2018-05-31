@@ -26,7 +26,7 @@ class CartViewHolder extends RecyclerView.ViewHolder implements View.OnClickList
     public TextView txt_cart_name, txt_price;
     public ImageView img_cart_count;
 
-    private ItemClickListener itemClickListener;
+    //private ItemClickListener itemClickListener;
 
     public  void setTxt_cart_name(TextView txt_cart_name){
         this.txt_cart_name = txt_cart_name;

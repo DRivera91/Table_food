@@ -52,7 +52,7 @@ public class Cart extends AppCompatActivity {
         database = FirebaseDatabase.getInstance();
         requests=database.getReference("Requests");
 
-        recyclerView= (RecyclerView)findViewById(R.id.listCart);
+        recyclerView= findViewById(R.id.listCart);
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);

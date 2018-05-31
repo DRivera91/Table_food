@@ -32,7 +32,7 @@ public class FoodList extends AppCompatActivity {
         database = FirebaseDatabase.getInstance();
         foodList = database.getReference("Food");
 
-        recyler_food = (RecyclerView)findViewById(R.id.recycler_food);
+        recyler_food = findViewById(R.id.recycler_food);
         recyler_food.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);
         recyler_food.setLayoutManager(layoutManager);
@@ -57,7 +57,7 @@ public class FoodList extends AppCompatActivity {
                 Picasso.with(getBaseContext()).load(model.getImage())
                         .into(viewHolder.food_image);
 
-                final Food local = model;
+                //final Food local = model;
                 viewHolder.setItemClickListener(new ItemClickListener() {
                     @Override
                     public void onClick(View view, int position, boolean isLongClick) {

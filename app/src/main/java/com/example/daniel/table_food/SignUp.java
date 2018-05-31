@@ -25,11 +25,11 @@ public class SignUp extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
-        edtPhone=(MaterialEditText)findViewById(R.id.edtPhone);
-        edtEmail=(MaterialEditText)findViewById(R.id.edtEmail);
-        edtPassword=(MaterialEditText)findViewById(R.id.edtPassword);
+        edtPhone=findViewById(R.id.edtPhone);
+        edtEmail=findViewById(R.id.edtEmail);
+        edtPassword=findViewById(R.id.edtPassword);
 
-        btnSignUp = (Button)findViewById(R.id.btnRegister);
+        btnSignUp = findViewById(R.id.btnRegister);
 
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
         final DatabaseReference table_user = database.getReference("User");
