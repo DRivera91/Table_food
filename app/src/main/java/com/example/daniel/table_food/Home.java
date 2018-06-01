@@ -105,6 +105,7 @@ public class Home extends AppCompatActivity
                         Intent foodIntent = new Intent(Home.this,FoodList.class);
                         foodIntent.putExtra("CategoryId", adapter.getRef(position).getKey());
                         startActivity(foodIntent);
+                        overridePendingTransition(R.anim.goup,R.anim.godown);
                     }
                 });
             }
@@ -148,15 +149,18 @@ public class Home extends AppCompatActivity
             if (id == R.id.nav_cart) {
                 Intent cartIntent = new Intent(Home.this, Cart.class);
                 startActivity(cartIntent);
+                overridePendingTransition(R.anim.goup,R.anim.godown);
             } else {
                 if (id == R.id.nav_orders) {
                     Intent orderIntent = new Intent(Home.this, OrderStatus.class);
                     startActivity(orderIntent);
+                    overridePendingTransition(R.anim.goup,R.anim.godown);
                 } else{
                     if (id == R.id.nav_log_out) {
                         Intent logout = new Intent(Home.this, SignIn.class);
                         logout.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(logout);
+                        overridePendingTransition(R.anim.goup,R.anim.godown);
                     }
                 }
             }

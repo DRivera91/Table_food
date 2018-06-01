@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent=new Intent(MainActivity.this,SignIn.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.goup,R.anim.godown);
             }
         });
 
@@ -39,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent=new Intent(MainActivity.this,SignUp.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.goup,R.anim.godown);
             }
         });
 

@@ -58,6 +58,7 @@ public class SignUp extends AppCompatActivity {
                             User user=new User(edtEmail.getText().toString(),edtPassword.getText().toString());
                             table_user.child(edtPhone.getText().toString()).setValue(user);
                             Toast.makeText(SignUp.this, R.string.Supsucessfully, Toast.LENGTH_SHORT).show();
+                            overridePendingTransition(R.anim.goup,R.anim.godown);
                             finish();
                         }
                     }

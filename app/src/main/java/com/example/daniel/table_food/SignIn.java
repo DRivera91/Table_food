@@ -58,6 +58,7 @@ public class SignIn extends AppCompatActivity {
                                     Intent homeIntent = new Intent(SignIn.this,Home.class);
                                     Common.currentUser=user;
                                     startActivity(homeIntent);
+                                    overridePendingTransition(R.anim.goup,R.anim.godown);
                                     finish();
                                 }
 

@@ -64,6 +64,7 @@ public class FoodList extends AppCompatActivity {
                         Intent foodDetail = new Intent(FoodList.this,FoodDetail.class);
                         foodDetail.putExtra("FoodId",adapterFlist.getRef(position).getKey());
                         startActivity(foodDetail);
+                        overridePendingTransition(R.anim.goup,R.anim.godown);
                     }
                 });
             }
