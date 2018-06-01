@@ -19,6 +19,7 @@ import android.widget.TextView;
 import com.example.daniel.table_food.Common.Common;
 import com.example.daniel.table_food.Interface.ItemClickListener;
 import com.example.daniel.table_food.Model.Category;
+import com.example.daniel.table_food.Model.Order;
 import com.example.daniel.table_food.ViewHolder.MenuViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DatabaseReference;
@@ -142,12 +143,13 @@ public class Home extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_menu) {
-            // Handle the camera action
+
         } else if (id == R.id.nav_cart) {
             Intent cartIntent = new Intent(Home.this, Cart.class);
             startActivity(cartIntent);
         } else if (id == R.id.nav_orders) {
-
+            Intent orderIntent = new Intent(Home.this, OrderStatus.class);
+            startActivity(orderIntent);
         } else if (id == R.id.nav_log_out) {
             Intent logout = new Intent(Home.this, SignIn.class);
             logout.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
