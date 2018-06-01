@@ -29,16 +29,16 @@ import java.util.Locale;
 
 public class Cart extends AppCompatActivity {
 
-    RecyclerView recyclerViewCart;
-    RecyclerView.LayoutManager layoutManagerCart;
+    public RecyclerView recyclerViewCart;
+    public RecyclerView.LayoutManager layoutManagerCart;
 
-    FirebaseDatabase databaseCart;
-    DatabaseReference requestsCart;
+    public FirebaseDatabase databaseCart;
+    public DatabaseReference requestsCart;
 
-    TextView txtTotalPriceCart;
-    Button btnPlaceCart;
-    List<Order> cart = new ArrayList<>();
-    CartAdapter adapter;
+    public TextView txtTotalPriceCart;
+    public Button btnPlaceCart;
+    public List<Order> cart = new ArrayList<>();
+    public CartAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

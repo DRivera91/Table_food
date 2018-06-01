@@ -21,8 +21,8 @@ import android.widget.Toast;
 
 public class SignIn extends AppCompatActivity {
 
-    MaterialEditText edtPhone, edtPassword;
-    Button btnSignIn;
+    public MaterialEditText edtPhone, edtPassword;
+    public Button btnSignIn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

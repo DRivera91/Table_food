@@ -22,18 +22,18 @@ import com.squareup.picasso.Picasso;
 
 public class FoodDetail extends AppCompatActivity {
 
-    TextView NamefoodDetail;
-    TextView PricefoodDetail;
-    TextView DescfoodDetail;
-    ImageView Imgfood;
-    CollapsingToolbarLayout collapsingToolbarLayout;
-    FloatingActionButton btnCart;
-    ElegantNumberButton numberButton;
+    public TextView NamefoodDetail;
+    public TextView PricefoodDetail;
+    public TextView DescfoodDetail;
+    public ImageView Imgfood;
+    public CollapsingToolbarLayout collapsingToolbarLayout;
+    public FloatingActionButton btnCart;
+    public ElegantNumberButton numberButton;
 
-    String foodId="";
-    FirebaseDatabase databaseFDetail;
-    DatabaseReference foodsFDetail;
-    Food currentFoodFDetail;
+    public String foodId="";
+    public FirebaseDatabase databaseFDetail;
+    public DatabaseReference foodsFDetail;
+    public Food currentFoodFDetail;
 
 
     @Override

@@ -17,8 +17,8 @@ import com.rengwuxian.materialedittext.MaterialEditText;
 
 public class SignUp extends AppCompatActivity {
 
-    MaterialEditText edtPhone, edtEmail, edtPassword;
-    Button btnSignUp;
+    public MaterialEditText edtPhone, edtEmail, edtPassword;
+    public Button btnSignUp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

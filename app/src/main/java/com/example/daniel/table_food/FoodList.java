@@ -17,12 +17,12 @@ import com.squareup.picasso.Picasso;
 
 public class FoodList extends AppCompatActivity {
 
-    RecyclerView recyler_food;
-    RecyclerView.LayoutManager layoutManagerFlist;
-    String categoryId="";
-    FirebaseDatabase databaseFlist;
-    DatabaseReference foodListFlist;
-    FirebaseRecyclerAdapter<Food, FoodViewHolder> adapterFlist;
+    public RecyclerView recyler_food;
+    public RecyclerView.LayoutManager layoutManagerFlist;
+    public String categoryId="";
+    public FirebaseDatabase databaseFlist;
+    public DatabaseReference foodListFlist;
+    public FirebaseRecyclerAdapter<Food, FoodViewHolder> adapterFlist;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -30,13 +30,13 @@ public class Home extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
 
-    FirebaseDatabase database;
-    DatabaseReference category;
-    TextView txtFullName;
+    public FirebaseDatabase database;
+    public DatabaseReference category;
+    public TextView txtFullName;
 
-    RecyclerView recyler_menu;
-    RecyclerView.LayoutManager layoutManager;
-    FirebaseRecyclerAdapter<Category, MenuViewHolder> adapter;
+    public RecyclerView recyler_menu;
+    public RecyclerView.LayoutManager layoutManager;
+    public FirebaseRecyclerAdapter<Category, MenuViewHolder> adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
