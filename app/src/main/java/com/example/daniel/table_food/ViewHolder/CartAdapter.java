@@ -14,7 +14,6 @@ import android.widget.TextView;
 
 import com.amulyakhare.textdrawable.TextDrawable;
 import com.example.daniel.table_food.Common.Common;
-import com.example.daniel.table_food.Interface.ItemClickListener;
 import com.example.daniel.table_food.Model.Order;
 import com.example.daniel.table_food.R;
 

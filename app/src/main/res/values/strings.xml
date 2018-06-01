@@ -6,6 +6,7 @@
     <string name="addCar">Agregado al carrito</string>
     <string name="PlOrder">Realizar pedido</string>
     <string name="total">Total: </string>
+    <string name="menu">Este es nuestra lista de restaurantes y sus menús</string>
     <string name="sucessfully">inicio sesión con éxito</string>
     <string name="Supsucessfully">Usuario registrado con éxito</string>
     <string name="failed">Número de teléfono o contraseña incorrectos</string>

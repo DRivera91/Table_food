@@ -29,14 +29,14 @@ import java.util.Locale;
 
 public class Cart extends AppCompatActivity {
 
-    RecyclerView recyclerView;
-    RecyclerView.LayoutManager layoutManager;
+    RecyclerView recyclerViewCart;
+    RecyclerView.LayoutManager layoutManagerCart;
 
-    FirebaseDatabase database;
-    DatabaseReference requests;
+    FirebaseDatabase databaseCart;
+    DatabaseReference requestsCart;
 
-    TextView txtTotalPrice;
-    Button btnPlace;
+    TextView txtTotalPriceCart;
+    Button btnPlaceCart;
     List<Order> cart = new ArrayList<>();
     CartAdapter adapter;
 
@@ -46,22 +46,22 @@ public class Cart extends AppCompatActivity {
         setContentView(R.layout.activity_cart);
 
         //Firebase
-        database = FirebaseDatabase.getInstance();
-        requests=database.getReference("Requests");
+        databaseCart = FirebaseDatabase.getInstance();
+        requestsCart=databaseCart.getReference("Requests");
 
         //Firebase
-        database = FirebaseDatabase.getInstance();
-        requests=database.getReference("Requests");
+        databaseCart = FirebaseDatabase.getInstance();
+        requestsCart=databaseCart.getReference("Requests");
 
-        recyclerView= findViewById(R.id.listCart);
-        recyclerView.setHasFixedSize(true);
-        layoutManager = new LinearLayoutManager(this);
-        recyclerView.setLayoutManager(layoutManager);
+        recyclerViewCart= findViewById(R.id.listCart);
+        recyclerViewCart.setHasFixedSize(true);
+        layoutManagerCart = new LinearLayoutManager(this);
+        recyclerViewCart.setLayoutManager(layoutManagerCart);
 
-        txtTotalPrice=findViewById(R.id.total);
-        btnPlace= findViewById(R.id.btnPlaceOrder);
+        txtTotalPriceCart=findViewById(R.id.total);
+        btnPlaceCart= findViewById(R.id.btnPlaceOrder);
 
-        btnPlace.setOnClickListener(new View.OnClickListener() {
+        btnPlaceCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(cart.size()>0)
@@ -96,11 +96,11 @@ public class Cart extends AppCompatActivity {
                         Common.currentUser.getPhone(),
                         Common.currentUser.getEmail(),
                         edtAddress.getText().toString(),
-                        txtTotalPrice.getText().toString(),
+                        txtTotalPriceCart.getText().toString(),
                         cart
                 );
                 //registro en firebase
-                requests.child(String.valueOf(System.currentTimeMillis()))
+                requestsCart.child(String.valueOf(System.currentTimeMillis()))
                         .setValue(request);
                 new Database(getBaseContext()).cleanCart();
                 Toast.makeText(Cart.this,R.string.thanks,Toast.LENGTH_SHORT).show();
@@ -121,7 +121,7 @@ public class Cart extends AppCompatActivity {
         cart = new Database(this).getCarts();
         adapter = new CartAdapter(cart, this);
         adapter.notifyDataSetChanged();
-        recyclerView.setAdapter(adapter);
+        recyclerViewCart.setAdapter(adapter);
 
         //calculo del precio total
         int total=0;
@@ -130,7 +130,7 @@ public class Cart extends AppCompatActivity {
         Locale locale = new Locale("es", "CO");
         NumberFormat fmt = NumberFormat.getCurrencyInstance(locale);
 
-        txtTotalPrice.setText(fmt.format(total));
+        txtTotalPriceCart.setText(fmt.format(total));
     }
 
     @Override
