@@ -18,24 +18,24 @@ import com.squareup.picasso.Picasso;
 public class FoodList extends AppCompatActivity {
 
     RecyclerView recyler_food;
-    RecyclerView.LayoutManager layoutManager;
+    RecyclerView.LayoutManager layoutManagerFlist;
     String categoryId="";
-    FirebaseDatabase database;
-    DatabaseReference foodList;
-    FirebaseRecyclerAdapter<Food, FoodViewHolder> adapter;
+    FirebaseDatabase databaseFlist;
+    DatabaseReference foodListFlist;
+    FirebaseRecyclerAdapter<Food, FoodViewHolder> adapterFlist;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food_list);
 
-        database = FirebaseDatabase.getInstance();
-        foodList = database.getReference("Food");
+        databaseFlist = FirebaseDatabase.getInstance();
+        foodListFlist = databaseFlist.getReference("Food");
 
         recyler_food = findViewById(R.id.recycler_food);
         recyler_food.setHasFixedSize(true);
-        layoutManager = new LinearLayoutManager(this);
-        recyler_food.setLayoutManager(layoutManager);
+        layoutManagerFlist = new LinearLayoutManager(this);
+        recyler_food.setLayoutManager(layoutManagerFlist);
 
         if(getIntent()!=null)
             categoryId = getIntent().getStringExtra("CategoryId");
@@ -47,9 +47,9 @@ public class FoodList extends AppCompatActivity {
     }
 
     private void loadListFood(String categoryId) {
-        adapter= new FirebaseRecyclerAdapter<Food, FoodViewHolder>(Food.class,
+        adapterFlist= new FirebaseRecyclerAdapter<Food, FoodViewHolder>(Food.class,
                 R.layout.food_item, FoodViewHolder.class,
-                foodList.orderByChild("MenuId").equalTo(categoryId)
+                foodListFlist.orderByChild("MenuId").equalTo(categoryId)
         ) {
             @Override
             protected void populateViewHolder(FoodViewHolder viewHolder, Food model, int position) {
@@ -62,13 +62,13 @@ public class FoodList extends AppCompatActivity {
                     @Override
                     public void onClick(View view, int position, boolean isLongClick) {
                         Intent foodDetail = new Intent(FoodList.this,FoodDetail.class);
-                        foodDetail.putExtra("FoodId",adapter.getRef(position).getKey());
+                        foodDetail.putExtra("FoodId",adapterFlist.getRef(position).getKey());
                         startActivity(foodDetail);
                     }
                 });
             }
         };
 
-        recyler_food.setAdapter(adapter);
+        recyler_food.setAdapter(adapterFlist);
     }
 }

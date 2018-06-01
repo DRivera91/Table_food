@@ -22,18 +22,18 @@ import com.squareup.picasso.Picasso;
 
 public class FoodDetail extends AppCompatActivity {
 
-    TextView Namefood;
-    TextView Pricefood;
-    TextView Descfood;
+    TextView NamefoodDetail;
+    TextView PricefoodDetail;
+    TextView DescfoodDetail;
     ImageView Imgfood;
     CollapsingToolbarLayout collapsingToolbarLayout;
     FloatingActionButton btnCart;
     ElegantNumberButton numberButton;
 
     String foodId="";
-    FirebaseDatabase database;
-    DatabaseReference foods;
-    Food currentFood;
+    FirebaseDatabase databaseFDetail;
+    DatabaseReference foodsFDetail;
+    Food currentFoodFDetail;
 
 
     @Override
@@ -41,8 +41,8 @@ public class FoodDetail extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food_detail);
 
-        database = FirebaseDatabase.getInstance();
-        foods = database.getReference("Food");
+        databaseFDetail = FirebaseDatabase.getInstance();
+        foodsFDetail = databaseFDetail.getReference("Food");
 
         numberButton=findViewById(R.id.number_button);
         btnCart = findViewById(R.id.btnCart);
@@ -51,19 +51,19 @@ public class FoodDetail extends AppCompatActivity {
             public void onClick(View v) {
                 new Database(getBaseContext()).addToCart(new Order(
                         foodId,
-                        currentFood.getName(),
+                        currentFoodFDetail.getName(),
                         numberButton.getNumber(),
-                        currentFood.getPrice(),
-                        currentFood.getDiscount()
+                        currentFoodFDetail.getPrice(),
+                        currentFoodFDetail.getDiscount()
 
                 ));
                 Toast.makeText(FoodDetail.this, R.string.addCar,Toast.LENGTH_SHORT).show();
             }
         });
 
-        Descfood=findViewById(R.id.food_description);
-        Namefood=findViewById(R.id.name_food);
-        Pricefood=findViewById(R.id.food_price);
+        DescfoodDetail=findViewById(R.id.food_description);
+        NamefoodDetail=findViewById(R.id.name_food);
+        PricefoodDetail=findViewById(R.id.food_price);
         Imgfood=findViewById(R.id.img_sfood);
 
         collapsingToolbarLayout = findViewById(R.id.collapsing);
@@ -79,17 +79,17 @@ public class FoodDetail extends AppCompatActivity {
     }
 
     private void getDetailFood(final String foodId) {
-        foods.child(foodId).addValueEventListener(new ValueEventListener() {
+        foodsFDetail.child(foodId).addValueEventListener(new ValueEventListener() {
 
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                currentFood = dataSnapshot.getValue(Food.class);
+                currentFoodFDetail = dataSnapshot.getValue(Food.class);
 
-                Picasso.with(getBaseContext()).load(currentFood.getImage()).into(Imgfood);
-                collapsingToolbarLayout.setTitle(currentFood.getName());
-                Pricefood.setText(currentFood.getPrice());
-                Namefood.setText(currentFood.getName());
-                Descfood.setText(currentFood.getDescription());
+                Picasso.with(getBaseContext()).load(currentFoodFDetail.getImage()).into(Imgfood);
+                collapsingToolbarLayout.setTitle(currentFoodFDetail.getName());
+                PricefoodDetail.setText(currentFoodFDetail.getPrice());
+                NamefoodDetail.setText(currentFoodFDetail.getName());
+                DescfoodDetail.setText(currentFoodFDetail.getDescription());
             }
 
             @Override

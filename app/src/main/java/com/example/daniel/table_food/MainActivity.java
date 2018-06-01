@@ -13,7 +13,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     Button btnSignIn, btnSignUp;
-    TextView txtSlogan;
+    TextView Slogantxt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,9 +22,9 @@ public class MainActivity extends AppCompatActivity {
 
         btnSignIn = findViewById(R.id.btnSignIn);
         btnSignUp = findViewById(R.id.btnsignUp);
-        txtSlogan = findViewById(R.id.txtSlogan);
+        Slogantxt = findViewById(R.id.txtSlogan);
         Typeface face = Typeface.createFromAsset(getAssets(),"fonts/NABILA.TTF");
-        txtSlogan.setTypeface(face);
+        Slogantxt.setTypeface(face);
 
         btnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
